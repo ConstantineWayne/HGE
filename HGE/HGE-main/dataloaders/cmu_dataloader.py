@@ -14,23 +14,6 @@ class AlignedMoseiDataset(Dataset):
         self.visual, self.audio, \
             self.text, self.labels = self._get_data(self.data_type)
 
-
-        # if self.data_type == 'train':
-        #     if self.mislabel:
-        #         with open(args.mislabel_path,'rb') as j:
-        #             file = json.load(j)
-        #             self.file = np.array(file)
-        #
-        #     elif self.flipp:
-        #         with open(args.flipp_path,'rb') as j:
-        #             file = json.load(j)
-        #             self.file = np.array(file)
-        #
-        #     elif self.mask:
-        #         with open(args.mask_path,'rb') as j:
-        #             file = json.load(j)
-        #             self.file = np.array(file)
-
     def _get_data(self, data_type):
         data = torch.load(self.data_path)
         data = data[data_type]
@@ -82,13 +65,6 @@ class AlignedMoseiDataset(Dataset):
         text, text_mask = self._get_text(index)
         visual, visual_mask = self._get_visual(index)
         audio, audio_mask = self._get_audio(index)
-        # if self.data_type == 'train':
-        #     if self.mislabel or self.flipp or self.mask:
-        #         label = self.file[index]
-        #     else:
-        #         label = self._get_labels(index)
-        # else:
-        #     label = self._get_labels(index)
         label = self._get_labels(index)
         return text, text_mask, visual, visual_mask, \
             audio, audio_mask, label

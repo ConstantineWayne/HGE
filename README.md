@@ -10,10 +10,10 @@ Data files (containing processed MOSEI datasets) can be downloaded from [Aligned
 Please put the downloaded datasets into `./data` directory.
 
 ## Motivation
-![photo](introduction_1.pdf "Motivation")
+![photo](introduction_1_00.png "Motivation")
 
 ## Method Introduction
-![photo2](framework_1.pdf "Framework")
+![photo2](framework_1_00(1).png "Framework")
 
  ### Run the Codes
  You can select the training dataset in train.sh. If you want to train on Aligned MOSEI, add `--aligned`, and if you want to train on Unaligned MOSEI, add `--unaligned_mask_same_length`. 
